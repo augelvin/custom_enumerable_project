@@ -63,6 +63,13 @@ module Enumerable
     array
   end
 
+  def my_inject(i = 0)
+    for n in self
+      i = yield(i, n)
+    end
+    i
+  end
+
 end
 
 # You will first have to define my_each
