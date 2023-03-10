@@ -16,6 +16,16 @@ module Enumerable
     selected
   end
 
+  def my_all?
+    for n in self do
+      if !yield(n)
+        return false
+      end
+    end
+    true
+  end
+
+
 
 end
 
