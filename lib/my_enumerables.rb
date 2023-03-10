@@ -25,7 +25,14 @@ module Enumerable
     true
   end
 
-
+  def my_any?
+    for n in self do
+      if yield(n)
+        return true
+      end
+    end
+    return false
+  end
 
 end
 
