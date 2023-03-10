@@ -55,6 +55,14 @@ module Enumerable
     i
   end
 
+  def my_map
+    array = []
+    for n in self
+      array << yield(n)
+    end
+    array
+  end
+
 end
 
 # You will first have to define my_each
