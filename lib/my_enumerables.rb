@@ -3,10 +3,19 @@ module Enumerable
   def my_each_with_index
     i = 0
     for n in self do
-      yield n, i
+      yield(n, i)
       i += 1
     end
   end
+
+  def my_select
+    selected = []
+    for n in self do
+      selected << n if yield(n)
+    end
+    selected
+  end
+
 
 end
 
@@ -18,7 +27,7 @@ class Array
   # Define my_each here
   def my_each
     for i in self do
-      yield i
+      yield(i)
     end
   end
 
