@@ -43,6 +43,18 @@ module Enumerable
     return true
   end
 
+  def my_count
+    i = 0
+    for n in self do
+      begin
+        i += 1 if yield(n)
+      rescue
+        i += 1
+      end
+    end
+    i
+  end
+
 end
 
 # You will first have to define my_each
@@ -52,8 +64,8 @@ end
 class Array
   # Define my_each here
   def my_each
-    for i in self do
-      yield(i)
+    for n in self do
+      yield(n)
     end
   end
 
